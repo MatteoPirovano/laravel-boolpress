@@ -30,6 +30,11 @@
             <td>{{$post->publication_date}}</td>  
             <td>{{$post->created_at}}</td>  
             <td>{{$post->updated_at}}</td> 
+            <td>
+              <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+              </a>
+            </td>
           </tr>
       @endforeach
     </tbody>
