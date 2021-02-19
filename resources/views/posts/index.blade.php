@@ -17,6 +17,7 @@
         <td>created_at</td>  
         <td>updated_at</td>  
         <td></td>
+        <td></td>
       </tr>
     </thead>
     <tbody>
@@ -25,11 +26,12 @@
             <td>{{$post->id}}</td>  
             <td>{{$post->title}}</td>  
             <td>{{$post->subtitle}}</td>  
-            <td>{{$post->text}}</td>  
+            <td>{{substr($post->text, 0,10)}}</td>  
             <td>{{$post->author}}</td>  
             <td>{{$post->publication_date}}</td>  
             <td>{{$post->created_at}}</td>  
-            <td>{{$post->updated_at}}</td> 
+            <td>{{$post->updated_at}}</td>
+            <td>{{$post->infoPost->post_status}}</td>
             <td>
               <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary">
                 <i class="fas fa-search"></i>
