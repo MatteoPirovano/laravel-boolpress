@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('header')
-  <h1>Crea un nuovo post</h1>
+  <h1>Modifica post</h1>
 @endsection
 
 @section('content')
@@ -16,33 +16,33 @@
   @endif
 
 
-  <form action="{{route('posts.store')}}" method="POST">
+  <form action="{{route('posts.update', $post->id)}}" method="POST">
     @csrf
-    @method('POST')
+    @method('PUT')
 
     <div class="form-group">
       <label for="title">Titolo</label>
-      <input type="text" class="form-control" id="title" name="title" placeholder="Titolo" value="{{old('title')}}">
+      <input type="text" class="form-control" id="title" name="title" placeholder="Titolo" value="{{$post->title}}">
     </div>
 
     <div class="form-group">
       <label for="subtitle">Sottotitolo</label>
-      <input type="text" class="form-control" id="subtitle" name="subtitle" placeholder="Sottotitolo" value="{{old('subtitle')}}">
+      <input type="text" class="form-control" id="subtitle" name="subtitle" placeholder="Sottotitolo" value="{{$post->subtitle}}">
     </div>
 
     <div class="form-group">
       <label for="mediumText">Testo</label>
-      <textarea name="mediumText" id="mediumText" class="form-control" rows="15" placeholder="Testo" value="{{old('mediumText')}}"></textarea>
+      <textarea type="text" name="mediumText" id="mediumText" class="form-control" rows="15" placeholder="Testo" value="{{$post->mediumText}}"></textarea>
     </div>
 
     <div class="form-group">
       <label for="author">Autore</label>
-      <input type="author" class="form-control" id="author" name="author" placeholder="Autore" value="{{old('author')}}">
+      <input type="author" class="form-control" id="author" name="author" placeholder="Autore" value="{{$post->author}}">
     </div>
 
     <div class="form-group">
       <label for="publication_date">Data pubblicazione</label>
-      <input type="date" class="form-control" name="publication_date" id="publication_date" placeholder="Data pubblicazione" value="{{old('publication_date')}}">
+      <input type="date" class="form-control" name="publication_date" id="publication_date" placeholder="Data pubblicazione" value="{{$post->publication_date}}">
     </div>
 
     <button class="btn btn-success">Salva</button>

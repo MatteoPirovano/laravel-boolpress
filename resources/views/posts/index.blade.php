@@ -5,6 +5,12 @@
 @endsection
 
 @section('content')    
+
+  @if (session('message'))
+    <div class="alert alert-succes">
+      {{session('message')}}
+    </div>     
+  @endif
   <table class="table table-dark table-stripped table-bordered">
     <thead>
       <tr>
@@ -31,11 +37,23 @@
             <td>{{$post->publication_date}}</td>  
             <td>{{$post->created_at}}</td>  
             <td>{{$post->updated_at}}</td>
-            <td>{{$post->infoPost->post_status}}</td>
+            {{-- <td>{{$post->infoPost->post_status}}</td> --}}
             <td>
-              <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary">
+              <a href="{{route('posts.show', $post->id)}}" class="btn btn-success">
                 <i class="fas fa-search"></i>
               </a>
+            </td>
+            <td>
+              <a href="{{route('posts.edit', $post->id)}}" class="btn btn-success">
+                <i class="fas fa-pencil-alt"></i>
+              </a>
+            </td>
+            <td>
+              <form action="{{route('posts.destroy', $post->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+              </form>
             </td>
           </tr>
       @endforeach

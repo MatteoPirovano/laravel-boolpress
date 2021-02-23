@@ -2,8 +2,8 @@
 
 @section('header')
     <h1>Dettagio Post</h1>
-    <p>Post status: {{$post->infoPost->post_status}}</p>
-    <p>Coment status: {{$post->infoPost->comment_status}}</p>
+    {{-- <p>Post status: {{$post->infoPost->post_status}}</p>
+    <p>Coment status: {{$post->infoPost->comment_status}}</p> --}}
 @endsection
 
 @section('content')
