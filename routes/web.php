@@ -17,4 +17,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 // Route::get('/', 'HomeController@index');
+
 Route::resource('posts', 'PostController');
+
+Route::get('/blog/{slug}', 'BlogController@show')->name('post');
+
+Route::post('/blog/{id}/comment', 'BlogController@addComment')->name('add-comment');

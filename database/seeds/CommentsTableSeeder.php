@@ -22,7 +22,7 @@ class CommentsTableSeeder extends Seeder
 
                 $commentDate=$faker->dateTime();
                 $newComment->post_id = $post->id;
-                $newComment->author=  $faker->userName;
+                $newComment->author=$faker->userName;
                 $newComment->text = $faker->sentence(10);
                 $newComment->created_at = $commentDate;
                 $newComment->updated_at = $commentDate;

@@ -31,8 +31,8 @@
     </div>
 
     <div class="form-group">
-      <label for="mediumText">Testo</label>
-      <textarea type="text" name="mediumText" id="mediumText" class="form-control" rows="15" placeholder="Testo" value="{{$post->mediumText}}"></textarea>
+      <label for="text">Testo</label>
+      <textarea type="text" name="text" id="text" class="form-control" rows="6" placeholder="Testo" value="{{$post->mediumText}}"></textarea>
     </div>
 
     <div class="form-group">
