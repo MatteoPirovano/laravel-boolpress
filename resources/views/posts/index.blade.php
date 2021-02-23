@@ -14,16 +14,19 @@
   <table class="table table-dark table-stripped table-bordered">
     <thead>
       <tr>
-        <td>ID</td>  
-        <td>title</td>  
-        <td>subtitle</td>  
-        <td>text</td>  
-        <td>author</td>  
-        <td>publication_date</td>  
-        <td>created_at</td>  
-        <td>updated_at</td>  
-        <td></td>
-        <td></td>
+        <th>ID</th>  
+        <th>title</th>  
+        <th>subtitle</th>  
+        <th>text</th>  
+        <th>author</th>  
+        <th>publication_date</th>  
+        <th>created_at</th>  
+        <th>updated_at</th>  
+        <th>status</th>
+        <th>comment</th>
+        <th>info</th>
+        <th>edit</th>
+        <th>delete</th>
       </tr>
     </thead>
     <tbody>
@@ -37,7 +40,9 @@
             <td>{{$post->publication_date}}</td>  
             <td>{{$post->created_at}}</td>  
             <td>{{$post->updated_at}}</td>
-            {{-- <td>{{$post->infoPost->post_status}}</td> --}}
+            <td>{{$post->infoPost->post_status}}</td>
+            <td>{{$post->infoPost->comment_status}}</td>
+
             <td>
               <a href="{{route('posts.show', $post->id)}}" class="btn btn-success">
                 <i class="fas fa-search"></i>

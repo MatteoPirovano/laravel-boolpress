@@ -12,10 +12,30 @@
         <tr>
           <td><strong>{{$key}}</strong></td>
           <td>{{$value}}</td>
-          <td></td>
+        </tr>
+    @endforeach
+    
+  </table>
+  
+  <h2>Status</h2>
+  <table class="table table-dark table-stripped table-bordered">
+    @foreach ($post->infopost->getAttributes() as $key=>$value)
+        <tr>
+          <td><strong>{{$key}}</strong></td>
+          <td>{{$value}}</td>
         </tr>
     @endforeach
   </table>
+
+  <h2>Commenti</h2>
+  <ul>
+    @foreach ($post->comments as $comment)
+        <li>
+          <p>{{$comment->text}}</p>
+          <small>{{$comment->author}}</small>
+        </li>
+    @endforeach
+  </ul>
 @endsection
 
 @section('footer')
