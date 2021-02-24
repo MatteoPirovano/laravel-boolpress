@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -60,6 +61,8 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        $now = new Carbon();
+        // $lastWeek=Carbon::create(2021, 2, 22, 9, 30,0, 'Europe/Rome');
         return view('posts.show', compact('post')); 
     }
 

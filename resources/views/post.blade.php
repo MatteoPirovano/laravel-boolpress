@@ -18,7 +18,7 @@
         <h2>Commenti</h2>
         @foreach ($post->comments as $comment)
         <div>
-            <small>{{$comment->author}} - {{$comment->created_at}}</small>
+            <small>{{$comment->author}} - {{$comment->created_at->format('l d/m/Y H:i:s')}}</small>
             <p>{{$comment->text}}</p>
         </div>
         @endforeach
